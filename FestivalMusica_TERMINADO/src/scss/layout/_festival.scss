@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sobre-festival {
+    @include m.contenedor;
+
+    @include m.tablet {
+        @include m.grid(2);
+    }
+}
+
+.contenido-festival {
+
+    margin-top: 5rem;
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    .fecha {
+        color: v.$verde;
+        font-weight: 700;
+    }
+
+}
+
+.calendario {
+    @include m.resetear-lista;
+
+    li {
+        padding: 2.5rem;
+        font-weight: 700;
+        span {
+            font-weight: 400;
+        }
+    }
+}
+
+.bg-amarillo {
+    background-color: v.$amarillo;
+    li:nth-child(odd){
+        background-color: lighten(v.$amarillo, 5%);
+    }
+}
+
+.bg-verde {
+    background-color: v.$verde;
+    li:nth-child(odd){
+        background-color: lighten(v.$verde, 5%);
+    }
+}
